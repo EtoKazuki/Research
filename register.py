@@ -1,10 +1,18 @@
+# -*- coding: utf-8 -*-
+
 import dlib
 import cv2
 import sqite3
 from contextlib import closing
 import numpy as np
+import path
+from os import argv
 
 dbname = "register_face.db"
+detector = dlib.get_frontal_face_detector()
+predictor = dlib.shape_predictor("/Users/etokazuki/pyfolder/dlib-18.18/examples/build/shape_predictor_68_face_landmarks.dat")
+images_path = argv[1]
+images_list = path.listdir(images_path)
 
 
 def register(name, image):
@@ -101,3 +109,13 @@ def cul_distance(x1, y1, x2, y2):
     y2 = np.array(y2)
     dis = np.sqrt((x1 - x2)**2 + (y1 - y2)**2)
     return dis
+
+
+if __name__ == "__main__":
+    name = input("名前を入力してください")
+    for file in images_list:
+        root, exi = path.splitext(images_path+file)
+        if exi == ".jpg" or exi == ".png":
+            register(images_path+file, name)
+        else:
+            pass
