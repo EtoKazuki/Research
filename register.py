@@ -10,7 +10,7 @@ from os import argv
 
 dbname = "register_face.db"
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("/Users/etokazuki/pyfolder/dlib-18.18/examples/build/shape_predictor_68_face_landmarks.dat")
+predictor = dlib.shape_predictor("file_path")
 images_path = argv[1]
 images_list = path.listdir(images_path)
 
