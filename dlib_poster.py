@@ -7,10 +7,10 @@ import numpy as np
 import os
 import csv
 
-dbname = "/Users/etokazuki/pyfolder/send/research/register_face_point_2.db"
+dbname = "db_file"
 detector = dlib.get_frontal_face_detector()
-predictor = dlib.shape_predictor("/Users/etokazuki/pyfolder/dlib-18.18/examples/build/shape_predictor_68_face_landmarks.dat")
-name_path = "/Users/etokazuki/pyfolder/send/lab_face/test_face_2/"
+predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
+name_path = "file_path"
 name_list = [name for name in os.listdir(name_path) if not name.startswith(".")]
 sql_data = {}
 
