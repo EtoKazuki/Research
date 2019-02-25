@@ -157,7 +157,7 @@ if __name__ == "__main__":
 
     # 分類器の指定
     detector = dlib.get_frontal_face_detector()
-    PREDICTOR_PATH = "/Users/etokazuki/pyfolder/dlib-18.18/examples/build/shape_predictor_68_face_landmarks.dat"
+    PREDICTOR_PATH = "shape_predictor_68_face_landmarks.dat"
     predictor = dlib.shape_predictor(PREDICTOR_PATH)
 
     # カメラ映像取得
